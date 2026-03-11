@@ -5,13 +5,21 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Random;
 
+/**
+ * This class servers as a Deck of Cards.
+ * Uses a list of chars for the suits, and a List for playingcards.
+ * Iterates and randomizes a set of cards in a List.
+ *
+ * @author phillipdyb
+ * @version 1.0
+ */
 public class DeckOfCards {
-
-  // Array with H(Hearts), D(Diamond), C(Clover), S(Spades)
   private char[] suits = {'H', 'D', 'C', 'S'};
   private List<PlayingCard> cards = new ArrayList<>();
 
-  // Function to iterate between cards
+  /**
+   * Iterators in the for loop, creating a card with a suit and a value.
+   */
   public DeckOfCards() {
     for (char suit : suits) {
       for (int value = 1; value <= 13; value++) {
@@ -20,6 +28,11 @@ public class DeckOfCards {
     }
   }
 
+  /**
+   *
+   * @param n Randomizes a value that iterators through the deck size, creating a new set of decks.
+   * @return randomized hand of decks.
+   */
   public List<PlayingCard> dealHand(int n) {
     if (n < 1 || n > 52) {
       throw new IllegalArgumentException("n must be between 1 and 52");

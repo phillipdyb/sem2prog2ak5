@@ -7,8 +7,17 @@ import java.util.ArrayList;
 import java.util.List;
 import org.junit.jupiter.api.Test;
 
+/**
+ * Tests for the Hand of Cards class.
+ *
+ * @author phillipdyb
+ * @version 1.0
+ */
 class HandOfCardsTest {
 
+  /**
+   * Checks if the same value cards returns a true for flush.
+   */
   @Test
   void isFlush() {
     List<PlayingCard> cards = new ArrayList<>();
@@ -23,6 +32,9 @@ class HandOfCardsTest {
     assertTrue(hand.isFlush());
   }
 
+  /**
+   * Checks if not same value cards returns a false for flush.
+   */
   @Test
   void isNotFlush() {
     List<PlayingCard> cards = new ArrayList<>();
@@ -37,6 +49,9 @@ class HandOfCardsTest {
     assertFalse(hand.isFlush());
   }
 
+  /**
+   * Checks if the sum is correct.
+   */
   @Test
   void getSumReturnsCorrectValue() {
     List<PlayingCard> cards = List.of(
@@ -50,6 +65,9 @@ class HandOfCardsTest {
     assertEquals(9, hand.getSum());
   }
 
+  /**
+   * Checks if the Hearts listed are correct.
+   */
   @Test
   void getHeartsReturnsOnlyHeartsCards() {
     List<PlayingCard> cards = List.of(
@@ -63,6 +81,9 @@ class HandOfCardsTest {
     assertEquals("H2 H10", hand.getHearts());
   }
 
+  /**
+   * Check if No Hearts is listed correctly.
+   */
   @Test
   void getHeartsReturnsNoHeartsIfNoneExist() {
     List<PlayingCard> cards = List.of(
@@ -75,6 +96,9 @@ class HandOfCardsTest {
     assertEquals("No Hearts", hand.getHearts());
   }
 
+  /**
+   * Check if the Queen of Spades are listed correctly.
+   */
   @Test
   void isS12DetectsQueenOfSpades() {
     List<PlayingCard> cards = List.of(
@@ -87,6 +111,9 @@ class HandOfCardsTest {
     assertEquals("S12", hand.isS12());
   }
 
+  /**
+   * Check if the No Queen of Spades is listed correctly.
+   */
   @Test
   void isS12ReturnsMessageIfNotPresent() {
     List<PlayingCard> cards = List.of(

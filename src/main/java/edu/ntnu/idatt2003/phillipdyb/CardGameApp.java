@@ -7,10 +7,21 @@ import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
 
+/**
+ * This class uses JavaFX for GUI.
+ *
+ * @author phillipdyb
+ * @version 1.0
+ */
 public class CardGameApp extends Application {
 
-
-  // Start GUI
+  /**
+   * Starts the GUI with labels counting as functions from other classes.
+   * This only has 1 view, primaryStage.
+   *
+   * Button dealButton calls all functions again, to get a new set of cards.
+   * This also updates all functions to check the new cards.
+   */
   @Override
   public void start(Stage primaryStage) {
     DeckOfCards deck = new DeckOfCards();
