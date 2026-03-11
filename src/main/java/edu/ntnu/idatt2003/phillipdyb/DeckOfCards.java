@@ -1,7 +1,6 @@
 package edu.ntnu.idatt2003.phillipdyb;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 import java.util.Random;
 
@@ -14,23 +13,23 @@ import java.util.Random;
  * @version 1.0
  */
 public class DeckOfCards {
-  private char[] suits = {'H', 'D', 'C', 'S'};
-  private List<PlayingCard> cards = new ArrayList<>();
+  private final char[] suits = {'H', 'D', 'C', 'S'};
+  private final List<PlayingCard> cards = new ArrayList<>();
 
   /**
-   * Iterators in the for loop, creating a card with a suit and a value.
+   * Iterators in the for loop, creating a card with a suit and a face.
    */
   public DeckOfCards() {
     for (char suit : suits) {
-      for (int value = 1; value <= 13; value++) {
-        cards.add(new PlayingCard(suit, value));
+      for (int face = 1; face <= 13; face++) {
+        cards.add(new PlayingCard(suit, face));
       }
     }
   }
 
   /**
    *
-   * @param n Randomizes a value that iterators through the deck size, creating a new set of decks.
+   * @param n Randomizes a face that iterators through the deck size, creating a new set of decks.
    * @return randomized hand of decks.
    */
   public List<PlayingCard> dealHand(int n) {
