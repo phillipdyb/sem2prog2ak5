@@ -16,7 +16,7 @@ class PlayingCardTest {
     PlayingCard card = new PlayingCard('S', 10);
 
     assertEquals('S', card.getSuit());
-    assertEquals(10, card.getValue());
+    assertEquals(10, card.getFace());
   }
 
   /**
