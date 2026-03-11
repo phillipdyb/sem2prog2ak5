@@ -1,13 +1,13 @@
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-
 import edu.ntnu.idatt2003.phillipdyb.HandOfCards;
 import edu.ntnu.idatt2003.phillipdyb.PlayingCard;
 import java.util.ArrayList;
 import java.util.List;
 import org.junit.jupiter.api.Test;
 
-public class HandOfCardsTest {
+class HandOfCardsTest {
 
   @Test
   void isFlush() {
@@ -35,6 +35,68 @@ public class HandOfCardsTest {
     HandOfCards hand = new HandOfCards(cards);
 
     assertFalse(hand.isFlush());
+  }
+
+  @Test
+  void getSumReturnsCorrectValue() {
+    List<PlayingCard> cards = List.of(
+        new PlayingCard('H', 2),
+        new PlayingCard('D', 3),
+        new PlayingCard('S', 4)
+    );
+
+    HandOfCards hand = new HandOfCards(cards);
+
+    assertEquals(9, hand.getSum());
+  }
+
+  @Test
+  void getHeartsReturnsOnlyHeartsCards() {
+    List<PlayingCard> cards = List.of(
+        new PlayingCard('H', 2),
+        new PlayingCard('D', 3),
+        new PlayingCard('H', 10)
+    );
+
+    HandOfCards hand = new HandOfCards(cards);
+
+    assertEquals("H2 H10", hand.getHearts());
+  }
+
+  @Test
+  void getHeartsReturnsNoHeartsIfNoneExist() {
+    List<PlayingCard> cards = List.of(
+        new PlayingCard('D', 2),
+        new PlayingCard('S', 3)
+    );
+
+    HandOfCards hand = new HandOfCards(cards);
+
+    assertEquals("No Hearts", hand.getHearts());
+  }
+
+  @Test
+  void isS12DetectsQueenOfSpades() {
+    List<PlayingCard> cards = List.of(
+        new PlayingCard('S', 12),
+        new PlayingCard('H', 5)
+    );
+
+    HandOfCards hand = new HandOfCards(cards);
+
+    assertEquals("S12", hand.isS12());
+  }
+
+  @Test
+  void isS12ReturnsMessageIfNotPresent() {
+    List<PlayingCard> cards = List.of(
+        new PlayingCard('H', 10),
+        new PlayingCard('D', 8)
+    );
+
+    HandOfCards hand = new HandOfCards(cards);
+
+    assertEquals("No Queen of Spades", hand.isS12());
   }
 
 }
