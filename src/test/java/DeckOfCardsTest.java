@@ -26,15 +26,15 @@ class DeckOfCardsTest {
   }
 
   /**
-   * The value of a card should be between 1 and 13.
+   * The Face of a card should be between 1 and 13.
    */
   @Test
-  void dealtCardsHaveValidValues() {
+  void dealtCardsHaveValidFaces() {
     DeckOfCards deck = new DeckOfCards();
     List<PlayingCard> hand = deck.dealHand(10);
 
     for (PlayingCard card : hand) {
-      assertTrue(card.getValue() >= 1 && card.getValue() <= 13);
+      assertTrue(card.getFace() >= 1 && card.getFace() <= 13);
     }
   }
 
@@ -61,7 +61,7 @@ class DeckOfCardsTest {
   }
 
   /**
-   * No card can have the same value and suit. If else, an error should be thrown.
+   * No card can have the same Face and suit. If else, an error should be thrown.
    */
   @Test
   void dealtCardsShouldBeUnique() {
