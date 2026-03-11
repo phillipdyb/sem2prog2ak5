@@ -1,0 +1,48 @@
+/* styles.css */
+
+#root {
+    -fx-background-color: #1a472a;
+}
+
+#hand-label {
+    -fx-font-size: 24px;
+    -fx-text-fill: white;
+    -fx-background-color: #2d6a4f;
+    -fx-padding: 12 20;
+    -fx-background-radius: 8;
+}
+
+#deal-button {
+    -fx-background-color: #e63946;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-padding: 10 24;
+    -fx-background-radius: 6;
+    -fx-cursor: hand;
+}
+
+#check-button {
+    -fx-background-color: #457b9d;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-padding: 10 24;
+    -fx-background-radius: 6;
+    -fx-cursor: hand;
+}
+
+.info-box {
+    -fx-background-color: #2d6a4f;
+    -fx-background-radius: 10;
+    -fx-padding: 16;
+}
+
+.box-title {
+    -fx-font-size: 14px;
+    -fx-text-fill: #95d5b2;
+    -fx-font-weight: bold;
+}
+
+.box-value {
+    -fx-font-size: 15px;
+    -fx-text-fill: white;
+}
