@@ -1,6 +1,7 @@
 package edu.ntnu.idatt2003.phillipdyb;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class DeckOfCards {
@@ -16,7 +17,12 @@ public class DeckOfCards {
         cards.add(new PlayingCard(suit, value));
       }
     }
+  }
 
+  // Deals a set of 5 cards, shuffled from the collection
+  public List<PlayingCard> dealHand() {
+    Collections.shuffle(cards);
+    return cards.subList(0, 5);
   }
 
 
