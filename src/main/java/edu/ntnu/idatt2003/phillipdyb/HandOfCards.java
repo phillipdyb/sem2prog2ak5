@@ -22,5 +22,13 @@ public class HandOfCards {
         .count() == 1;
   }
 
+  // Sum all cards in hand
+  public int getSum() {
+    return hand.stream()
+        .mapToInt(PlayingCard::getValue)
+        .sum();
+  }
+
+  
 
 }
