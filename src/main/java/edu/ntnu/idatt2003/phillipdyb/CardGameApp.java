@@ -23,15 +23,21 @@ public class CardGameApp extends Application {
 
     Label getSum = new Label(String.valueOf(hand.getSum()));
 
+    Label getHearts = new Label(hand.getHearts());
+
+    Label isS12 = new Label(hand.isS12());
+
     Button dealButton = new Button("Deal new hand");
     dealButton.setOnAction(e -> {
       HandOfCards newHand = new HandOfCards(deck.dealHand(5));
       getHand.setText(newHand.getHand().toString());
       isFlush.setText(newHand.isFlush() ? "Flush!" : "No flush");
       getSum.setText(String.valueOf(newHand.getSum()));
+      getHearts.setText(newHand.getHearts());
+      isS12.setText(newHand.isS12());
     });
 
-    Scene scene = new Scene(new VBox(getHand, dealButton, isFlush, getSum), 600, 400);
+    Scene scene = new Scene(new VBox(getHand, dealButton, isFlush, getSum, getHearts, isS12), 600, 400);
 
     primaryStage.setTitle("Card Game");
     primaryStage.setScene(scene);
