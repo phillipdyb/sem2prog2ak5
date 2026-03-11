@@ -14,22 +14,24 @@ public class CardGameApp extends Application {
   @Override
   public void start(Stage primaryStage) {
     DeckOfCards deck = new DeckOfCards();
-    HandOfCards hand = new HandOfCards(deck.dealHand());
+    HandOfCards hand = new HandOfCards(deck.dealHand(5));
 
     Label getHand = new Label(hand.getHand().toString());
     getHand.setStyle("-fx-font-size: 20px;");
 
     Label isFlush = new Label(hand.isFlush() ? "Flush!" : "No flush");
-    isFlush.setText(hand.isFlush() ? "Flush!" : "No flush");
+
+    Label getSum = new Label(String.valueOf(hand.getSum()));
 
     Button dealButton = new Button("Deal new hand");
     dealButton.setOnAction(e -> {
-      HandOfCards newHand = new HandOfCards(deck.dealHand());
+      HandOfCards newHand = new HandOfCards(deck.dealHand(5));
       getHand.setText(newHand.getHand().toString());
       isFlush.setText(newHand.isFlush() ? "Flush!" : "No flush");
+      getSum.setText(String.valueOf(newHand.getSum()));
     });
 
-    Scene scene = new Scene(new VBox(getHand, dealButton, isFlush), 600, 400);
+    Scene scene = new Scene(new VBox(getHand, dealButton, isFlush, getSum), 600, 400);
 
     primaryStage.setTitle("Card Game");
     primaryStage.setScene(scene);
