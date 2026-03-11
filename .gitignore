@@ -28,3 +28,6 @@ target/
 
 # .DS_Store mac stuff
 .DS_Store
+
+# IntelliJ stuff
+.idea
