@@ -16,7 +16,7 @@ import org.junit.jupiter.api.Test;
 class HandOfCardsTest {
 
   /**
-   * Checks if the same value cards returns a true for flush.
+   * Checks if the same face cards returns a true for flush.
    */
   @Test
   void isFlush() {
@@ -33,7 +33,7 @@ class HandOfCardsTest {
   }
 
   /**
-   * Checks if not same value cards returns a false for flush.
+   * Checks if not same face cards returns a false for flush.
    */
   @Test
   void isNotFlush() {
@@ -53,7 +53,7 @@ class HandOfCardsTest {
    * Checks if the sum is correct.
    */
   @Test
-  void getSumReturnsCorrectValue() {
+  void getSumReturnsCorrectFace() {
     List<PlayingCard> cards = List.of(
         new PlayingCard('H', 2),
         new PlayingCard('D', 3),
