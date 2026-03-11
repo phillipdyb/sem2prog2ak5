@@ -40,11 +40,11 @@ public class HandOfCards {
   }
 
   /**
-   * @return Summarizes the value of all the cards.
+   * @return Summarizes the face of all the cards.
    */
   public int getSum() {
     return hand.stream()
-        .mapToInt(PlayingCard::getValue)
+        .mapToInt(PlayingCard::getFace)
         .sum();
   }
 
@@ -72,7 +72,7 @@ public class HandOfCards {
    */
   public String isS12() {
     List<PlayingCard> s12 = hand.stream()
-        .filter(card -> card.getSuit()== 'S' && card.getValue() == 12)
+        .filter(card -> card.getSuit()== 'S' && card.getFace() == 12)
         .collect(Collectors.toList());
     if (s12.isEmpty()) {
       return "No Queen of Spades";
