@@ -14,5 +14,13 @@ public class HandOfCards {
     return hand;
   }
 
+  // Checks if the cards are Flush
+  public boolean isFlush() {
+    return hand.stream()
+        .map(PlayingCard::getSuit)
+        .distinct()
+        .count() == 1;
+  }
+
 
 }
