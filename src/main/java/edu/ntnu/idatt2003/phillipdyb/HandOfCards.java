@@ -4,9 +4,12 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class HandOfCards {
-  private List<PlayingCard> hand;
+  private final List<PlayingCard> hand;
 
   public HandOfCards(List<PlayingCard> hand) {
+    if (hand == null) {
+      throw new IllegalArgumentException("Hand cannot be null");
+    }
     this.hand = hand;
   }
 
