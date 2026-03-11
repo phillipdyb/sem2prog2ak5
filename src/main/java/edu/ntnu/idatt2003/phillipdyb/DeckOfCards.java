@@ -20,13 +20,10 @@ public class DeckOfCards {
     }
   }
 
-  // Deals a set of 5 cards, shuffled from the collection
-//  public List<PlayingCard> dealHand() {
-//    Collections.shuffle(cards);
-//    return cards.subList(0, 5);
-//  }
-
   public List<PlayingCard> dealHand(int n) {
+    if (n < 1 || n > 52) {
+      throw new IllegalArgumentException("n must be between 1 and 52");
+    }
     Random random = new Random();
     List<PlayingCard> deck = new ArrayList<>(cards);
     List<PlayingCard> hand = new ArrayList<>();
@@ -39,6 +36,5 @@ public class DeckOfCards {
 
     return hand;
   }
-
 
 }
